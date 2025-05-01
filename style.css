@@ -8,43 +8,42 @@
         font-style: normal;
     }
     
-* {
+    /* Reset y estilos generales */
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
     
-body {
-        font-family: 'Gulfs Display Normal', serif; /* Usar Gulfs Display como principal */
-        line-height: 1.6;
-        color: #333;
-    }
-    
-.container {
+    /* Contenedor */
+    .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
     }
     
-.header {
+    /* Encabezado */
+    .header {
+        font-family: 'Gulfs Display Normal', serif;
         display: flex;
-        height: 70px;
         background-color: #FEB4CD;
         justify-content: flex-end;
-        position: fixed;
+        position: absolute; /* Asegura que el menú se quede fijo */
         width: 100%;
         top: 0;
-        z-index: 1000;
+        height: 70px; /* Altura fija para el menú */
+        z-index: 1000; /* Alto z-index para que esté por encima de todo */
+        align-items: center; /* Centra verticalmente el contenido del menú */
     }
     
-.nav {
+    .nav {
         display: flex;
         align-items: center;
         margin-right: 30px;
         gap: 15px;
     }
     
-.nav-link {
+    .nav-link {
         cursor: pointer;
         color: black;
         text-decoration: none;
@@ -52,56 +51,277 @@ body {
         font-weight: 500;
     }
     
-.nav-link:hover {
+    .nav-link:hover {
         color: white;
     }
     
-.menu-img {
+    .menu-img {
         height: 20px;
     }
     
-    
-.inicio {
-        background-color: #FEB4CD;
-        border-bottom: 1px solid black;
-        height: 75vh; 
+    /* Sección Inicial */
+    .inicio {
+        background-color: #FEB4CD; /* Fondo rosa sólido */
+        position: relative;
+        height: 130vh; /* Aumentado para que las imágenes sean visibles */
         display: flex;
         flex-direction: column;
         align-items: center;
-        position: relative;
         text-align: center;
-        padding-top: 80px; 
+        padding-top: 80px;
+        overflow: hidden;
     }
     
-.titulo {
+    /* Fondo Amarillo con Línea Negra */
+    .inicio::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40vh; /* Ajusta este valor para cambiar el tamaño del fondo amarillo */
+        background-color: #fdec72; /* Fondo amarillo sólido */
+        border-top: 1px solid black; /* Línea negra delgada para separar */
+        z-index: 0;
+    }
+    
+    /* Título */
+    .titulo {
+        font-family: 'Gulfs Display Normal', serif;
         color: #0061FF;
         font-size: 90px;
         line-height: 70px;
         position: absolute;
-        z-index: 2;
-        top: 50%;
-        transform: translateY(-50%);
+        z-index: 3;
+        top: 300px; /* Valor fijo en píxeles */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
     }
     
-.imagen1 {
+    /* Imagen Principal */
+    .imagen1 {
         position: absolute;
-        bottom: -68%; 
+        bottom: -100px; /* Valor fijo en píxeles */
         left: 50%;
         transform: translateX(-50%);
-        width: 60vw;
+        width: 70vw;
         max-width: 450px;
-        aspect-ratio: 3/4;
+        aspect-ratio: 2.5/4;
         overflow: hidden;
         border-radius: 40%;
         border: 2px solid black;
-        z-index: 1;
+        z-index: 2;
     }
     
-.imagen1 img {
+    .imagen1 img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
+    
+    /* Imagen Secundaria Izquierda */
+    .imagen2 {
+        position: absolute;
+        bottom: 100px; /* Valor fijo en píxeles */
+        left: -1%;
+        width: 25vw;
+        max-width: 300px;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        border-radius: 10%;
+        border: 2px solid black;
+        z-index: 2;
+    }
+    
+    .imagen2 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Imagen Secundaria Derecha */
+    .imagen3 {
+        position: absolute;
+        top: 270px; /* Valor fijo en píxeles */
+        right: 8%;
+        width: 20vw;
+        max-width: 250px;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        border-radius: 20%;
+        border: 2px solid black;
+        z-index: 2;
+    }
+    
+    .imagen3 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Estrellas Decorativas */
+    .estrella1 {
+        position: absolute;
+        top: 270px; /* Valor fijo en píxeles */
+        left: 20%;
+        width: 50px; /* Tamaño ajustado */
+        height: 50px; /* Tamaño ajustado */
+        z-index: 2;
+    }
+    
+    .estrella1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Asegura que el SVG se escale correctamente */
+    }
+    
+    .estrella2 {
+        position: absolute;
+        top: 470px; /* Valor fijo en píxeles */
+        left: 23%;
+        width: 90px; /* Tamaño ajustado */
+        height: 100px; /* Tamaño ajustado */
+        z-index: 2;
+    }
+    
+    .estrella2 img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Asegura que el SVG se escale correctamente */
+    }
+    
+    .estrella3 {
+        position: absolute;
+        bottom: 400px; /* Valor fijo en píxeles */
+        left: 68%;
+        width: 60px; /* Tamaño ajustado */
+        height: 100px; /* Tamaño ajustado */
+        z-index: 2;
+    }
+    
+    .estrella3 img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Asegura que el SVG se escale correctamente */
+    }
 
+    .forma2 {
+        position: absolute;
+        bottom: 450px; /* Valor fijo en píxeles */
+        right: 25%;
+        width: 60px; /* Tamaño ajustado */
+        height: 100px; /* Tamaño ajustado */
+        z-index: 2;
+        }
 
+.forma3 {
+        position: absolute;
+        bottom: 280px; /* Valor fijo en píxeles */
+        left: 31.5%;
+        width: 60px; /* Tamaño ajustado */
+        height: 100px; /* Tamaño ajustado */
+        z-index: 2;
+        }
 
+.forma4 {
+        position: absolute;
+        bottom: 235px;
+        right: 24%;
+        width: 150px; /* o lo que quieras */
+        height: 150px; /* o lo que quieras */
+        z-index: 2;
+            }
+            
+.forma4 img {
+        transform: rotate(160deg);
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+            }
+            
+    /* Media Queries para Móvil (<768px) */
+    @media (max-width: 767px) {
+        /* Sección Inicial */
+        .inicio {
+            height: 120vh;
+            padding-top: 100px;
+        }
+    
+        /* Fondo Amarillo */
+        .inicio::after {
+            height: 15%; /* Ajusta este valor para cambiar el tamaño del fondo amarillo en móvil */
+        }
+    
+        /* Título */
+        .titulo {
+            font-size: 40px;
+            line-height: 45px;
+            top: 200px; /* Valor fijo en píxeles para móvil */
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    
+        /* Imagen Principal */
+        .imagen1 {
+            width: 60vw;
+            max-width: 300px;
+            bottom: -80px; /* Valor fijo en píxeles para móvil */
+        }
+    
+        /* Imagen Secundaria Izquierda */
+        .imagen2 {
+            width: 40vw;
+            max-width: 200px;
+            bottom: 40px; /* Valor fijo en píxeles para móvil */
+            left: 5%;
+        }
+    
+        /* Imagen Secundaria Derecha */
+        .imagen3 {
+            width: 30vw;
+            max-width: 150px;
+            top: 160px; /* Valor fijo en píxeles para móvil */
+            right: 5%;
+        }
+    
+        /* Estrellas Decorativas */
+        .estrella1 {
+            top: 160px; /* Definir posición en móvil */
+            left: 10%;
+            width: 30px; /* Tamaño ajustado para móvil */
+            height: 30px; /* Tamaño ajustado para móvil */
+        }
+    
+        .estrella1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    
+        .estrella2 {
+            top: 320px; /* Valor fijo en píxeles para móvil */
+            left: 5%;
+            width: 35px; /* Tamaño ajustado para móvil */
+            height: 35px; /* Tamaño ajustado para móvil */
+        }
+    
+        .estrella2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    
+        .estrella3 {
+            bottom: 240px; /* Valor fijo en píxeles para móvil */
+            left: 20%;
+            width: 30px; /* Tamaño ajustado para móvil */
+            height: 30px; /* Tamaño ajustado para móvil */
+        }
+    
+        .estrella3 img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
