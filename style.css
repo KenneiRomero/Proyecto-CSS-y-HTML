@@ -1038,7 +1038,7 @@
     top: -9%;
 }
 
-.botonContacto{
+.botonpaquete{
     position: relative;
     width: 7vw;
     height: 7vw;
@@ -1082,14 +1082,12 @@
     font-size: 1.5vw;
 }   
 
-
-.contacto{
-    grid-column: 1/span 8;
-    grid-row: 5/span 2;
-    background-color: #ffb4cc;
-}
 .linea-azul{
     height: 5px;
     background-color: blue;
     border: 3px solid blue;
 }
+
+
+
+
