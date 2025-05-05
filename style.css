@@ -25,7 +25,7 @@
     font-weight: bold;
     text-align: center;
     cursor: pointer;
-    z-index: 2000;
+    z-index: 2;
   }
 
 * {
@@ -48,8 +48,7 @@
     position: absolute;
     width: 100%;
     top: 0;
-    height: 70px;
-    z-index: 1000;
+    z-index: 4;
     align-items: center;
 }
 
@@ -57,7 +56,7 @@
     display: flex;
     align-items: center;
     margin-right: 30px;
-    gap: 15px;
+    gap: 1px;
 }
 
 .nav-link {
@@ -74,6 +73,83 @@
 
 .menu-img {
     height: 20px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-button {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: black;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    background-color: #FEB4CD;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.menu-button::before {
+    content: "☰";
+    position: relative;
+    top: -2px;
+}
+
+.menu-toggle:checked ~ .menu-button::before {
+    content: "✕";
+}
+
+@media screen and (max-width: 768px) {
+    .menu-button {
+        display: block;
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        height: 100vh;
+        width: 250px;
+        background-color: #FEB4CD;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 20px 20px;
+        transition: right 0.3s ease-in-out;
+        margin-right: 0;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        border-left: 2px solid black;
+        z-index: 999;
+    }
+
+    .menu-toggle:checked ~ .nav {
+        right: 0;
+    }
+
+    .nav-item {
+        margin: 15px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+
+    .menu-img {
+        margin-right: 10px;
+    }
 }
 
 .inicio {
